@@ -1,14 +1,4 @@
-  How the synthetic fixture tests work here:
-
-  - Fixture contract is defined in tests/cli_synthetic.rs:3 (input/, scenario.toml, expected/).
-  - Runner discovers and sorts case dirs under tests/fixtures/synthetic in tests/cli_synthetic.rs:41.
-  - The binary is executed via Cargo integration-test binary path (env!("CARGO_BIN_EXE_djour")) in tests/cli_synthetic.rs:182.
-  - Environment isolation is explicit: DJOUR_ROOT, DJOUR_MODE, EDITOR, VISUAL are removed (tests/cli_synthetic.rs:184, tests/common/mod.rs:5).
-  - Run command: cargo test --test cli_synthetic (I ran it; it passes).
-
-  Use this reusable prompt in other projects:
-
-  Set up fixture-driven end-to-end CLI tests for this Rust project, following this exact model.
+  Set up fixture-driven end-to-end CLI tests for this project, following this exact model.
 
   Goal:
   - Add integration tests under `tests/` using fixtures under `tests/fixtures/synthetic/<case>/`.
